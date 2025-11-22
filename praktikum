@@ -1,0 +1,74 @@
+# ================================
+# Program Daftar Kontak (Dictionary)
+# ================================
+
+kontak = {
+    "Ari": "0812678888",
+    "Dina": "0876777776"
+}
+
+# Fungsi untuk menampilkan tabel kontak
+def tampil_tabel():
+    print("\nNama | Nomor Telepon")
+    print("====================")
+    for nama, nomor in kontak.items():
+        print(f"{nama:<4} | {nomor}")
+
+# Program menu
+while True:
+    print("\n=== MENU KONTAK ===")
+    print("1. Tampilkan kontak Ari")
+    print("2. Tambah kontak baru (Riko: 087654544)")
+    print("3. Ubah nomor Dina menjadi 088999776")
+    print("4. Tampilkan semua Nama")
+    print("5. Tampilkan semua Nomor")
+    print("6. Tampilkan semua Nama dan Nomornya")
+    print("7. Hapus kontak Dina")
+    print("8. Tampilkan TABEL Kontak")
+    print("0. Keluar")
+
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        print("\nKontak Ari:", kontak.get("Ari", "Tidak ditemukan"))
+
+    elif pilihan == "2":
+        kontak["Riko"] = "087654544"
+        print("\nKontak Riko berhasil ditambahkan!")
+
+    elif pilihan == "3":
+        kontak["Dina"] = "088999776"
+        print("\nNomor Dina berhasil diubah!")
+
+    elif pilihan == "4":
+        print("\nSemua Nama:")
+        for nama in kontak.keys():
+            print("-", nama)
+
+    elif pilihan == "5":
+        print("\nSemua Nomor:")
+        for nomor in kontak.values():
+            print("-", nomor)
+
+    elif pilihan == "6":
+        print("\nDaftar Nama dan Nomor:")
+        for nama, nomor in kontak.items():
+            print(f"- {nama}: {nomor}")
+
+    elif pilihan == "7":
+        if "Dina" in kontak:
+            del kontak["Dina"]
+            print("\nKontak Dina berhasil dihapus!")
+        else:
+            print("\nKontak Dina sudah tidak ada.")
+
+    elif pilihan == "8":
+        tampil_tabel()
+
+    elif pilihan == "0":
+        print("\nProgram selesai.")
+        break
+
+    else:
+        print("\nPilihan tidak valid, coba lagi.")
+        
