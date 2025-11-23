@@ -35,7 +35,8 @@ print(daftar_kontak)
 ```
 #### 5. Tampilkan semua Nama (Keys)
 ```print("====================================")
-print("5. Semua Nama (Keys):")```
+print("5. Semua Nama (Keys):")
+```
 Mengubah keys() ke list agar mudah dibaca saat dicetak
 ```print(list(daftar_kontak.keys()))
 ```
