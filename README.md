@@ -73,3 +73,172 @@ print(daftar_kontak)
 print("====================================")
 ```
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7381a184-6399-493b-b709-b8b1bddd92b6" />
+
+---
+
+# Dictionary Global untuk menyimpan data mahasiswa
+data_mahasiswa = {}
+
+
+# --- FUNGSI PERHITUNGAN NILAI AKHIR ---
+def hitung_nilai_akhir(tugas, uts, uas):
+    """Menghitung Nilai Akhir dengan bobot Tugas: 30%, UTS: 35%, UAS: 35%."""
+    # [span_0](start_span)Nilai Akhir diambil dari perhitungan 3 komponen nilai (tugas: 30%, uts: 35%, uas: 35%)[span_0](end_span)
+    akhir = (tugas * 0.30) + (uts * 0.35) + (uas * 0.35)
+    return round(akhir, 2)  # Dibulatkan 2 angka di belakang koma
+
+
+# --- FUNGSI MENU UTAMA ---
+def tampilkan_menu():
+    """Menampilkan pilihan menu utama."""
+    print("\n==================================")
+    print("| PROGRAM INPUT NILAI MAHASISWA |")
+    print("==================================")
+    # [span_1](start_span)Tampilkan menu pilihan: (Tambah Data, Ubah Data, Hapus Data, Tampilkan Data, Cari Data)[span_1](end_span)
+    print("[(L)ihat, (T)ambah, (U)bah, (H)apus, (C)ari, (K)eluar]: ", end="")
+    pilihan = input().upper()
+    return pilihan
+
+
+# --- FUNGSI TAMPILKAN DATA (LIHAT) ---
+def tampilkan_data():
+    """Menampilkan seluruh data mahasiswa dalam bentuk tabel."""
+
+    if not data_mahasiswa:
+        print("\n[INFO]: TIDAK ADA DATA")
+        return
+
+    print("\n" + "=" * 70)
+    print(f"| {'NO':<3} | {'NIM':<10} | {'NAMA':<20} | {'TUGAS':<5} | {'UTS':<5} | {'UAS':<5} | {'AKHIR':<6} |")
+    print("=" * 70)
+
+    no = 1
+    for nim, data in data_mahasiswa.items():
+        print(
+            f"| {no:<3} | {nim:<10} | {data['Nama']:<20} | {data['Tugas']:<5} | {data['UTS']:<5} | {data['UAS']:<5} | {data['Akhir']:<6.2f} |")
+        no += 1
+    print("=" * 70)
+
+
+# --- FUNGSI TAMBAH DATA ---
+def tambah_data():
+    """Menambah data mahasiswa baru."""
+    print("\n--- TAMBAH DATA ---")
+    nim = input("NIM : ")
+
+    if nim in data_mahasiswa:
+        print(f"[ERROR]: NIM {nim} sudah ada!")
+        return
+
+    nama = input("Nama : ")
+    # Input nilai dipastikan berupa angka
+    try:
+        tugas = float(input("Nilai Tugas : "))
+        uts = float(input("Nilai UTS : "))
+        uas = float(input("Nilai UAS : "))
+    except ValueError:
+        print("[ERROR]: Input nilai harus berupa angka.")
+        return
+
+    akhir = hitung_nilai_akhir(tugas, uts, uas)
+
+    # Tambahkan data ke dictionary, dengan NIM sebagai key
+    data_mahasiswa[nim] = {
+        'Nama': nama,
+        'Tugas': tugas,
+        'UTS': uts,
+        'UAS': uas,
+        'Akhir': akhir
+    }
+    print(f"\n[SUKSES]: Data {nama} ({nim}) berhasil ditambahkan dengan Nilai Akhir {akhir:.2f}.")
+
+
+# --- FUNGSI UBAH DATA ---
+def ubah_data():
+    """Mengubah data mahasiswa yang sudah ada."""
+    print("\n--- UBAH DATA ---")
+    nim_cari = input("Masukkan NIM mahasiswa yang ingin diubah: ")
+
+    if nim_cari not in data_mahasiswa:
+        print(f"[ERROR]: NIM {nim_cari} tidak ditemukan.")
+        return
+
+    data = data_mahasiswa[nim_cari]
+    print(f"\nData saat ini untuk {data['Nama']} ({nim_cari}):")
+    print(f"Tugas: {data['Tugas']}, UTS: {data['UTS']}, UAS: {data['UAS']}")
+
+    try:
+        data['Nama'] = input(f"Nama baru ({data['Nama']}): ") or data['Nama']
+        data['Tugas'] = float(input(f"Nilai Tugas baru ({data['Tugas']}): ") or data['Tugas'])
+        data['UTS'] = float(input(f"Nilai UTS baru ({data['UTS']}): ") or data['UTS'])
+        data['UAS'] = float(input(f"Nilai UAS baru ({data['UAS']}): ") or data['UAS'])
+    except ValueError:
+        print("[ERROR]: Input nilai harus berupa angka.")
+        return
+
+    # Hitung ulang nilai akhir setelah perubahan
+    data['Akhir'] = hitung_nilai_akhir(data['Tugas'], data['UTS'], data['UAS'])
+
+    print(f"\n[SUKSES]: Data {nim_cari} berhasil diubah. Nilai Akhir baru: {data['Akhir']:.2f}.")
+
+
+# --- FUNGSI HAPUS DATA ---
+def hapus_data():
+    """Menghapus data mahasiswa berdasarkan NIM."""
+    print("\n--- HAPUS DATA ---")
+    nim_hapus = input("Masukkan NIM mahasiswa yang ingin dihapus: ")
+
+    if nim_hapus not in data_mahasiswa:
+        print(f"[ERROR]: NIM {nim_hapus} tidak ditemukan.")
+        return
+
+    nama = data_mahasiswa[nim_hapus]['Nama']
+    del data_mahasiswa[nim_hapus]
+    print(f"\n[SUKSES]: Data {nama} ({nim_hapus}) berhasil dihapus.")
+
+
+# --- FUNGSI CARI DATA ---
+def cari_data():
+    """Mencari dan menampilkan data satu mahasiswa."""
+    print("\n--- CARI DATA ---")
+    nim_cari = input("Masukkan NIM mahasiswa yang ingin dicari: ")
+
+    if nim_cari not in data_mahasiswa:
+        print(f"[ERROR]: NIM {nim_cari} tidak ditemukan.")
+        return
+
+    data = data_mahasiswa[nim_cari]
+    print("\n--- DATA DITEMUKAN ---")
+    print(f"NIM   : {nim_cari}")
+    print(f"Nama  : {data['Nama']}")
+    print(f"Tugas : {data['Tugas']}")
+    print(f"UTS   : {data['UTS']}")
+    print(f"UAS   : {data['UAS']}")
+    print(f"AKHIR : {data['Akhir']:.2f}")
+    print("----------------------")
+
+
+# --- MAIN LOOP PROGRAM ---
+def main():
+    while True:
+        pilihan = tampilkan_menu()
+
+        if pilihan == 'L':
+            tampilkan_data()
+        elif pilihan == 'T':
+            tambah_data()
+        elif pilihan == 'U':
+            ubah_data()
+        elif pilihan == 'H':
+            hapus_data()
+        elif pilihan == 'C':
+            cari_data()
+        elif pilihan == 'K':
+            print("\nProgram dihentikan. Sampai jumpa!")
+            break
+        else:
+            print("\n[ERROR]: Pilihan tidak valid. Silakan coba lagi.")
+
+
+if __name__ == "__main__":
+    main()
