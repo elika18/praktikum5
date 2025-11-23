@@ -76,20 +76,20 @@ print("====================================")
 
 ---
 
-# Dictionary Global untuk menyimpan data mahasiswa
-data_mahasiswa = {}
+## Praktikum: Manajemen Nilai Mahasiswa
+```data_mahasiswa = {}
+```
 
-
-# --- FUNGSI PERHITUNGAN NILAI AKHIR ---
-def hitung_nilai_akhir(tugas, uts, uas):
+### FUNGSI PERHITUNGAN NILAI AKHIR
+```def hitung_nilai_akhir(tugas, uts, uas):
     """Menghitung Nilai Akhir dengan bobot Tugas: 30%, UTS: 35%, UAS: 35%."""
     # [span_0](start_span)Nilai Akhir diambil dari perhitungan 3 komponen nilai (tugas: 30%, uts: 35%, uas: 35%)[span_0](end_span)
     akhir = (tugas * 0.30) + (uts * 0.35) + (uas * 0.35)
     return round(akhir, 2)  # Dibulatkan 2 angka di belakang koma
+```
 
-
-# --- FUNGSI MENU UTAMA ---
-def tampilkan_menu():
+### FUNGSI MENU UTAMA
+```def tampilkan_menu():
     """Menampilkan pilihan menu utama."""
     print("\n==================================")
     print("| PROGRAM INPUT NILAI MAHASISWA |")
@@ -98,10 +98,10 @@ def tampilkan_menu():
     print("[(L)ihat, (T)ambah, (U)bah, (H)apus, (C)ari, (K)eluar]: ", end="")
     pilihan = input().upper()
     return pilihan
+```
 
-
-# --- FUNGSI TAMPILKAN DATA (LIHAT) ---
-def tampilkan_data():
+### FUNGSI TAMPILKAN DATA (LIHAT)
+```def tampilkan_data():
     """Menampilkan seluruh data mahasiswa dalam bentuk tabel."""
 
     if not data_mahasiswa:
@@ -118,10 +118,10 @@ def tampilkan_data():
             f"| {no:<3} | {nim:<10} | {data['Nama']:<20} | {data['Tugas']:<5} | {data['UTS']:<5} | {data['UAS']:<5} | {data['Akhir']:<6.2f} |")
         no += 1
     print("=" * 70)
+```
 
-
-# --- FUNGSI TAMBAH DATA ---
-def tambah_data():
+### FUNGSI TAMBAH DATA
+```def tambah_data():
     """Menambah data mahasiswa baru."""
     print("\n--- TAMBAH DATA ---")
     nim = input("NIM : ")
@@ -151,10 +151,10 @@ def tambah_data():
         'Akhir': akhir
     }
     print(f"\n[SUKSES]: Data {nama} ({nim}) berhasil ditambahkan dengan Nilai Akhir {akhir:.2f}.")
+```
 
-
-# --- FUNGSI UBAH DATA ---
-def ubah_data():
+### FUNGSI UBAH DATA 
+```def ubah_data():
     """Mengubah data mahasiswa yang sudah ada."""
     print("\n--- UBAH DATA ---")
     nim_cari = input("Masukkan NIM mahasiswa yang ingin diubah: ")
@@ -180,10 +180,10 @@ def ubah_data():
     data['Akhir'] = hitung_nilai_akhir(data['Tugas'], data['UTS'], data['UAS'])
 
     print(f"\n[SUKSES]: Data {nim_cari} berhasil diubah. Nilai Akhir baru: {data['Akhir']:.2f}.")
+```
 
-
-# --- FUNGSI HAPUS DATA ---
-def hapus_data():
+### FUNGSI HAPUS DATA
+```def hapus_data():
     """Menghapus data mahasiswa berdasarkan NIM."""
     print("\n--- HAPUS DATA ---")
     nim_hapus = input("Masukkan NIM mahasiswa yang ingin dihapus: ")
@@ -195,10 +195,10 @@ def hapus_data():
     nama = data_mahasiswa[nim_hapus]['Nama']
     del data_mahasiswa[nim_hapus]
     print(f"\n[SUKSES]: Data {nama} ({nim_hapus}) berhasil dihapus.")
+```
 
-
-# --- FUNGSI CARI DATA ---
-def cari_data():
+### FUNGSI CARI DATA
+```def cari_data():
     """Mencari dan menampilkan data satu mahasiswa."""
     print("\n--- CARI DATA ---")
     nim_cari = input("Masukkan NIM mahasiswa yang ingin dicari: ")
@@ -216,10 +216,10 @@ def cari_data():
     print(f"UAS   : {data['UAS']}")
     print(f"AKHIR : {data['Akhir']:.2f}")
     print("----------------------")
+```
 
-
-# --- MAIN LOOP PROGRAM ---
-def main():
+### MAIN LOOP PROGRAM
+```def main():
     while True:
         pilihan = tampilkan_menu()
 
@@ -242,3 +242,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+#### Hasilnya
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/145af7a9-0b88-4a8a-954a-be2110039b36" />
+
+
+#### Berikut flowchart nya
+<img width="1177" height="594" alt="image" src="https://github.com/user-attachments/assets/97151a99-b390-4731-9573-54b3e2c49e19" />
