@@ -1,4 +1,11 @@
-# Prakrikum 5 Latihan Dictionary Python
+# PRAKTIKUM 5
+## Latihan 1: Manajemen Kontak dengan Python Dictionary
+
+Praktikum ini adalah latihan dasar untuk memahami cara kerja struktur data *Dictionary* pada Python. Kode ini mensimulasikan aplikasi daftar kontak sederhana dimana kita bisa menyimpan nama (sebagai Key) dan nomor telepon (sebagai Value).
+
+### Deskripsi Tugas & Penjelasan Kode
+
+Berikut adalah penjelasan langkah demi langkah dari 8 poin tugas yang dikerjakan dalam kode:
 
 #### 1. Buat Dictionary daftar kontak
 Nama sebagai key, dan nomor sebagai value
