@@ -1,6 +1,6 @@
 # Latihan 1: Manajemen Kontak dengan Python Dictionary
 
-Proyek ini adalah latihan dasar untuk memahami cara kerja struktur data **Dictionary** pada Python. Kode ini mensimulasikan aplikasi daftar kontak sederhana dimana kita bisa menyimpan nama (sebagai *Key*) dan nomor telepon (sebagai *Value*).
+Praktikum ini adalah latihan dasar untuk memahami cara kerja struktur data **Dictionary** pada Python. Kode ini mensimulasikan aplikasi daftar kontak sederhana dimana kita bisa menyimpan nama (sebagai *Key*) dan nomor telepon (sebagai *Value*).
 
 ## Deskripsi Tugas & Penjelasan Kode
 
@@ -20,11 +20,13 @@ daftar_kontak = {
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1a0cd111-dc94-435c-a281-1b95e042d16e" />
 Pilih menu: 1
 
+
 2. Menampilkan Kontak Ari
 Mengambil dan menampilkan nomor telepon (value) berdasarkan nama (key) "Ari".
- * Sintaks: dictionary["Key"].
+``` * Sintaks: dictionary["Key"].
 <!-- end list -->
 print(daftar_kontak["Ari"])
+```
 
 3. Menambah Kontak Baru
 Menambahkan data baru dengan nama "Riko". Karena key "Riko" belum ada sebelumnya, Python akan menambahkannya sebagai entri baru.
