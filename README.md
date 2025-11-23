@@ -1,7 +1,7 @@
-# Latihan Dictionary Python
+# Prakrikum 5 Latihan Dictionary Python
 
-# 1. Buat Dictionary daftar kontak
-# Nama sebagai key, dan nomor sebagai value
+### 1. Buat Dictionary daftar kontak
+Nama sebagai key, dan nomor sebagai value
 daftar_kontak = {
     "Ari": "081267888",
     "Dina": "087677777"
