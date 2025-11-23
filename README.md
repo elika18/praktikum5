@@ -6,7 +6,7 @@ Proyek ini adalah latihan dasar untuk memahami cara kerja struktur data **Dictio
 
 Berikut adalah penjelasan langkah demi langkah dari 8 poin tugas yang dikerjakan dalam kode:
 
-### 1. Membuat Dictionary Daftar Kontak
+1. Membuat Dictionary Daftar Kontak
 Kita menginisialisasi dictionary bernama `daftar_kontak` dengan dua data awal.
 * **Sintaks:** Menggunakan kurung kurawal `{}`.
 * **Format:** `"Key": "Value"`.
@@ -16,6 +16,7 @@ daftar_kontak = {
     "Ari": "081267888",
     "Dina": "087677777"
 }
+https://1drv.ms/i/c/89a1a1c1454ac923/EVkdgXCp82hJutLESbkwxsoBAD_l7saZqEYJ_BVTU3i3Ig?e=IoLelW
 
 2. Menampilkan Kontak Ari
 Mengambil dan menampilkan nomor telepon (value) berdasarkan nama (key) "Ari".
