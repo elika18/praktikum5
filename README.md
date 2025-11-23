@@ -38,13 +38,16 @@ print(daftar_kontak)
 print("5. Semua Nama (Keys):")
 ```
 Mengubah keys() ke list agar mudah dibaca saat dicetak
+
 ```print(list(daftar_kontak.keys()))
 ```
 
 #### 6. Tampilkan semua Nomor (Values)
 ```print("====================================")
-print("6. Semua Nomor (Values):")```
+print("6. Semua Nomor (Values):")
+```
 Mengubah values() ke list agar mudah dibaca saat dicetak
+
 ```print(list(daftar_kontak.values()))
 ```
 
