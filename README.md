@@ -1,60 +1,61 @@
-# Latihan 1: Manajemen Kontak dengan Python Dictionary
+# Latihan Dictionary Python
 
-Praktikum ini adalah latihan dasar untuk memahami cara kerja struktur data **Dictionary** pada Python. Kode ini mensimulasikan aplikasi daftar kontak sederhana dimana kita bisa menyimpan nama (sebagai *Key*) dan nomor telepon (sebagai *Value*).
-
-## Deskripsi Tugas & Penjelasan Kode
-
-Berikut adalah penjelasan langkah demi langkah dari 8 poin tugas yang dikerjakan dalam kode:
-
-1. Membuat Dictionary Daftar Kontak
-Kita menginisialisasi dictionary bernama `daftar_kontak` dengan dua data awal.
-* **Sintaks:** Menggunakan kurung kurawal `{}`.
-* **Format:** `"Key": "Value"`.
-
-```python
+# 1. Buat Dictionary daftar kontak
+# Nama sebagai key, dan nomor sebagai value
 daftar_kontak = {
     "Ari": "081267888",
     "Dina": "087677777"
 }
-```
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1a0cd111-dc94-435c-a281-1b95e042d16e" />
-Pilih menu: 1
+
+print("====================================")
+print("1. Dictionary Kontak Awal:")
+print(daftar_kontak)
 
 
-2. Menampilkan Kontak Ari
-Mengambil dan menampilkan nomor telepon (value) berdasarkan nama (key) "Ari".
-``` * Sintaks: dictionary["Key"].
-<!-- end list -->
+# 2. Tampilkan kontaknya Ari
+print("====================================")
+print("2. Nomor Kontak Ari:")
 print(daftar_kontak["Ari"])
-```
 
-3. Menambah Kontak Baru
-Menambahkan data baru dengan nama "Riko". Karena key "Riko" belum ada sebelumnya, Python akan menambahkannya sebagai entri baru.
+
+# 3. Tambah kontak baru dengan nama Riko, nomor 087654544
 daftar_kontak["Riko"] = "087654544"
+print("====================================")
+print("3. Kontak setelah menambah Riko:")
+print(daftar_kontak)
 
-4. Mengubah Kontak Dina
-Mengganti nomor telepon milik "Dina". Karena key "Dina" sudah ada di dalam dictionary, Python akan menimpa (overwrite) nomor lama dengan nomor baru.
+
+# 4. Ubah kontak Dina dengan nomor baru 088999776
 daftar_kontak["Dina"] = "088999776"
+print("====================================")
+print("4. Kontak setelah mengubah nomor Dina:")
+print(daftar_kontak)
 
-5. Menampilkan Semua Nama (Keys)
-Menampilkan daftar semua nama yang ada di kontak menggunakan method .keys().
-# Mengembalikan view object berisi semua key
+
+# 5. Tampilkan semua Nama (Keys)
+print("====================================")
+print("5. Semua Nama (Keys):")
+# Mengubah keys() ke list agar mudah dibaca saat dicetak
 print(list(daftar_kontak.keys()))
 
-6. Menampilkan Semua Nomor (Values)
-Menampilkan daftar semua nomor telepon yang tersimpan menggunakan method .values().
-# Mengembalikan view object berisi semua value
+
+# 6. Tampilkan semua Nomor (Values)
+print("====================================")
+print("6. Semua Nomor (Values):")
+# Mengubah values() ke list agar mudah dibaca saat dicetak
 print(list(daftar_kontak.values()))
 
-7. Menampilkan Daftar Nama dan Nomor
-Menggunakan perulangan (loop) untuk menampilkan nama dan nomor secara berpasangan agar lebih rapi. Kita menggunakan method .items() yang mengembalikan pasangan (key, value).
+
+# 7. Tampilkan daftar Nama dan nomornya (Items)
+print("====================================")
+print("7. Daftar Nama dan Nomor (Items):")
 for nama, nomor in daftar_kontak.items():
     print(f"- {nama}: {nomor}")
 
-8. Menghapus Kontak Dina
-Menghapus data "Dina" dari dictionary secara permanen menggunakan kata kunci del.
-del daftar_kontak["Dina"]
 
-Cara Menjalankan
-Pastikan Python sudah terinstal, lalu jalankan perintah berikut di terminal:
-python latihan1.py
+# 8. Hapus kontak Dina
+del daftar_kontak["Dina"]
+print("====================================")
+print("8. Kontak setelah menghapus Dina:")
+print(daftar_kontak)
+print("====================================")
