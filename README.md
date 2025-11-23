@@ -18,7 +18,7 @@ daftar_kontak = {
 }
 ```
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1a0cd111-dc94-435c-a281-1b95e042d16e" />
-
+Pilih menu: 1
 
 2. Menampilkan Kontak Ari
 Mengambil dan menampilkan nomor telepon (value) berdasarkan nama (key) "Ari".
