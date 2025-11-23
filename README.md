@@ -2,7 +2,7 @@
 
 #### 1. Buat Dictionary daftar kontak
 Nama sebagai key, dan nomor sebagai value
-daftar_kontak = {
+```daftar_kontak = {
     "Ari": "081267888",
     "Dina": "087677777"
 }
@@ -10,13 +10,14 @@ daftar_kontak = {
 print("====================================")
 print("1. Dictionary Kontak Awal:")
 print(daftar_kontak)
-
+```
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b7ae6f75-a753-4225-9b32-3a8c961f61f0" />
 
 # 2. Tampilkan kontaknya Ari
-print("====================================")
+```print("====================================")
 print("2. Nomor Kontak Ari:")
 print(daftar_kontak["Ari"])
-
+```
 
 # 3. Tambah kontak baru dengan nama Riko, nomor 087654544
 daftar_kontak["Riko"] = "087654544"
