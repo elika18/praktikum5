@@ -26,6 +26,7 @@ print("====================================")
 print("3. Kontak setelah menambah Riko:")
 print(daftar_kontak)
 ```
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fed89397-9eab-4241-bb5e-612a9406b6df" />
 
 #### 4. Ubah kontak Dina dengan nomor baru 088999776
 ```daftar_kontak["Dina"] = "088999776"
@@ -33,34 +34,35 @@ print("====================================")
 print("4. Kontak setelah mengubah nomor Dina:")
 print(daftar_kontak)
 ```
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/5a19531a-fa0c-4f37-81e7-1561c7aea608" />
+
 #### 5. Tampilkan semua Nama (Keys)
 ```print("====================================")
 print("5. Semua Nama (Keys):")
+print(list(daftar_kontak.keys()))
 ```
-Mengubah keys() ke list agar mudah dibaca saat dicetak
-
-```print(list(daftar_kontak.keys()))
-```
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c34803f7-d2fd-4cf0-888f-ec040450b475" />
 
 #### 6. Tampilkan semua Nomor (Values)
 ```print("====================================")
 print("6. Semua Nomor (Values):")
+print(list(daftar_kontak.values()))
 ```
-Mengubah values() ke list agar mudah dibaca saat dicetak
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a67c757d-8d52-4feb-9e87-d5d66b513357" />
 
-```print(list(daftar_kontak.values()))
-```
-
-# 7. Tampilkan daftar Nama dan nomornya (Items)
-print("====================================")
+#### 7. Tampilkan daftar Nama dan nomornya (Items)
+```print("====================================")
 print("7. Daftar Nama dan Nomor (Items):")
 for nama, nomor in daftar_kontak.items():
     print(f"- {nama}: {nomor}")
+```
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b604b922-f752-4f16-a41b-6da331f507d7" />
 
-
-# 8. Hapus kontak Dina
-del daftar_kontak["Dina"]
+#### 8. Hapus kontak Dina
+```del daftar_kontak["Dina"]
 print("====================================")
 print("8. Kontak setelah menghapus Dina:")
 print(daftar_kontak)
 print("====================================")
+```
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7381a184-6399-493b-b709-b8b1bddd92b6" />
