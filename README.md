@@ -16,7 +16,8 @@ daftar_kontak = {
     "Ari": "081267888",
     "Dina": "087677777"
 }
-https://1drv.ms/i/c/89a1a1c1454ac923/EVkdgXCp82hJutLESbkwxsoBAD_l7saZqEYJ_BVTU3i3Ig?e=IoLelW
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1a0cd111-dc94-435c-a281-1b95e042d16e" />
+
 
 2. Menampilkan Kontak Ari
 Mengambil dan menampilkan nomor telepon (value) berdasarkan nama (key) "Ari".
